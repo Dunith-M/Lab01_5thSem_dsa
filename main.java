@@ -20,9 +20,10 @@ public class main {
     //    tw.input();
     //    System.out.println(tw);
 
-        
+       //  MotorCoach
+       MotorCoach coach = new MotorCoach();
+       coach.input();
+       System.out.println(coach); 
     }
 
-
-    
 }
