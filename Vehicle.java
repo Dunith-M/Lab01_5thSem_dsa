@@ -27,4 +27,28 @@ public class Vehicle {
         System.out.print("Enter registration year: ");
         this.registrationYear = scanner.nextInt();
     }
+
+
+    // Getters 
+    public String getVehicleNumber(){
+        return this.vehicleNumber;
+    }
+
+    public Owner getOwner(){
+        return this.owner;
+    }
+
+    public int getRegistrationYear(){
+        return this.registrationYear;
+    }
+
+    public double getAmout(){
+        return 0.0;
+    }
+
+    @Override
+    public String toString() {
+        return owner.toString() + " [" + getClass().getSimpleName() + "]-" + 
+               vehicleNumber + " (" + registrationYear + ")";
+    }
 }
