@@ -1,54 +1,30 @@
-import java.util.Scanner;
-
 public class Vehicle {
-
-    // (b) 1
-    private String vehicleNumber;
+    private String vehicleNo;
     private Owner owner;
-    private int registrationYear;
+    private int registeredYear;
 
-    public Vehicle(){
-        this.vehicleNumber = " ";
-        this.owner = new Owner();
-        this.registrationYear = 0;
+    public Vehicle() {
+        owner = new Owner();
     }
 
-    public Vehicle(String vehicleNumber, Owner owner, int registrationYear){
-        this.vehicleNumber = vehicleNumber;
+    public Vehicle(String vehicleNo, Owner owner, int registeredYear) {
+        this.vehicleNo = vehicleNo;
         this.owner = owner;
-        this.registrationYear = registrationYear;
+        this.registeredYear = registeredYear;
     }
 
-    public void input(){
-        Scanner scanner = new Scanner(System.in);
-        System.out.print("Enter vehicle number: ");
-        this.vehicleNumber = scanner.nextLine();
-        this.owner.input();
-        System.out.print("Enter registration year: ");
-        this.registrationYear = scanner.nextInt();
+    public void input() {
+        java.util.Scanner sc = new java.util.Scanner(System.in);
+        System.out.print("Enter Vehicle Number: ");
+        vehicleNo = sc.nextLine();
+        owner.input();
+        System.out.print("Enter Registered Year: ");
+        registeredYear = sc.nextInt();
     }
 
+    public Owner getOwner() { return owner; }
+    public String getVehicleNo() { return vehicleNo; }
+    public int getRegisteredYear() { return registeredYear; }
 
-    // Getters 
-    public String getVehicleNumber(){
-        return this.vehicleNumber;
-    }
-
-    public Owner getOwner(){
-        return this.owner;
-    }
-
-    public int getRegistrationYear(){
-        return this.registrationYear;
-    }
-
-    public double getAmout(){
-        return 0.0;
-    }
-
-    @Override
-    public String toString() {
-        return owner.toString() + " [" + getClass().getSimpleName() + "]-" + 
-               vehicleNumber + " (" + registrationYear + ")";
-    }
+    public double getAmount() { return 0; }
 }

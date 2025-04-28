@@ -1,29 +1,44 @@
+import java.util.Scanner;
+
 public class main {
     public static void main(String[] args) {
-       // Owner owner = new Owner();
-       // owner.input();
-       // System.out.println(owner);
+        RegistrationApp app = new RegistrationApp();
+        Scanner sc = new Scanner(System.in);
+        int option;
 
-       // Vehicle vehicle = new Vehicle();
-       // vehicle.input();
-       // System.out.println(vehicle);
+        do {
+            System.out.println("-------------------------------------");
+            System.out.println("Vehicle Registration System");
+            System.out.println("-------------------------------------");
+            System.out.println("              MAIN MENU");
+            System.out.println("=====================================");
+            System.out.println("[1] Add New Registration");
+            System.out.println("[2] Print Registration summary");
+            System.out.println("[3] Save Registration summary");
+            System.out.println("[4] Print cache balance");
+            System.out.println("[5] Exit");
+            System.out.print("Enter your option [1-5]: ");
+            option = sc.nextInt();
 
-       // MotorCycle
-    //    Owner owner1 = new Owner("Saman Kumara", "123 Main St", "783454678v");
-    //    MotorCycle mc = new MotorCycle("XY-3456", owner1, 2001);
-    //    System.out.println(mc);
-
-       //  ThreeWheeler
-    //    Owner owner2 = new Owner();
-    //    owner2.input();
-    //    ThreeWheeler tw = new ThreeWheeler();
-    //    tw.input();
-    //    System.out.println(tw);
-
-       //  MotorCoach
-       MotorCoach coach = new MotorCoach();
-       coach.input();
-       System.out.println(coach); 
+            switch (option) {
+                case 1:
+                    app.input();
+                    break;
+                case 2:
+                    app.printRegSummary();
+                    break;
+                case 3:
+                    app.saveRegSummary();
+                    break;
+                case 4:
+                    app.printCacheBalance();
+                    break;
+                case 5:
+                    System.out.println("Exiting program...");
+                    break;
+                default:
+                    System.out.println("Invalid Option!");
+            }
+        } while (option != 5);
     }
-
 }

@@ -1,36 +1,28 @@
-import java.util.Scanner;
-
 public class Owner {
-    // (a)  1
-    private String name, address, NIC;
+    private String name;
+    private String address;
+    private String nic;
 
-    // (a) 2
-    // default constructor + parameterized constructor
-    public Owner() {
-        this.name = "";
-        this.address = "";
-        this.NIC = "";
-    }
+    public Owner() {}
 
-    public Owner(String name, String address, String NIC){
+    public Owner(String name, String address, String nic) {
         this.name = name;
         this.address = address;
-        this.NIC = NIC;
+        this.nic = nic;
     }
 
-    // (a) 3
+    public void input() {
+        java.util.Scanner sc = new java.util.Scanner(System.in);
+        System.out.print("Enter Name: ");
+        name = sc.nextLine();
+        System.out.print("Enter Address: ");
+        address = sc.nextLine();
+        System.out.print("Enter NIC: ");
+        nic = sc.nextLine();
+    }
+
     @Override
     public String toString() {
-        return name.toUpperCase() + " (" + NIC + ")";
-    }
-
-    public void input(){
-        Scanner scanner = new Scanner(System.in);
-        System.out.print("Enter name: ");
-        this.name = scanner.nextLine();
-        System.out.print("Enter address: ");
-        this.address = scanner.nextLine();
-        System.out.print("Enter NIC: ");
-        this.NIC = scanner.nextLine();
+        return name.toUpperCase() + " (" + nic + ")";
     }
 }

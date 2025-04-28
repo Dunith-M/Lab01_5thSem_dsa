@@ -1,39 +1,28 @@
-import java.util.Scanner;
-
-public class MotorCoach extends Vehicle{
-    
+public class MotorCoach extends Vehicle {
     private String fuelType;
-    private int numberOfSeats;
+    private int noOfSeats;
 
     public MotorCoach() {
         super();
-        this.fuelType = "";
-        this.numberOfSeats = 0;
     }
 
-    public MotorCoach(String vehicleNumber, Owner owner, int registeredYear, String fuelType, int numberOfSeats) {
-        super(vehicleNumber, owner, registeredYear);
+    public MotorCoach(String vehicleNo, Owner owner, int registeredYear, String fuelType, int noOfSeats) {
+        super(vehicleNo, owner, registeredYear);
         this.fuelType = fuelType;
-        this.numberOfSeats = numberOfSeats;
+        this.noOfSeats = noOfSeats;
     }
 
     @Override
-    public void input() {
-        super.input();
-        Scanner scanner = new Scanner(System.in);
-        System.out.print("Fuel Type: ");
-        this.fuelType = scanner.nextLine();
-        System.out.print("Number of Seats: ");
-        this.numberOfSeats = scanner.nextInt();
-    }
-
-    
     public double getAmount() {
-        return 2000.00;
+        if (fuelType.equalsIgnoreCase("diesel")) {
+            return 500.0 * noOfSeats;
+        } else {
+            return 400.0 * noOfSeats;
+        }
     }
 
     @Override
     public String toString() {
-        return super.toString() + "    Rs. " + String.format("%.0f", getAmount());
+        return getOwner().toString() + "   [MotorCoach]-" + getVehicleNo() + "(" + getRegisteredYear() + ") Rs. " + getAmount();
     }
 }

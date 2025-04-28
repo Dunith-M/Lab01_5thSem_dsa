@@ -1,22 +1,19 @@
 public class MotorCycle extends Vehicle {
-
-    // constructor 
-    public MotorCycle(){
+    public MotorCycle() {
         super();
     }
 
-    // parameterized constructor
-    public MotorCycle(String vehicleNumber, Owner owner, int registrationYear){
-        super(vehicleNumber, owner, registrationYear);
+    public MotorCycle(String vehicleNo, Owner owner, int registeredYear) {
+        super(vehicleNo, owner, registeredYear);
     }
 
-    
+    @Override
     public double getAmount() {
-        return 700.00;
+        return 700.0;
     }
 
     @Override
     public String toString() {
-        return super.toString() + "    Rs. " + String.format("%.0f", getAmount());
+        return getOwner().toString() + "   [MotorCycle]-" + getVehicleNo() + "(" + getRegisteredYear() + ") Rs. " + getAmount();
     }
 }
